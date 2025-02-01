@@ -1,0 +1,12 @@
+kagglehub
+langchain
+langchain-community
+langchain-core
+langchain-chroma
+transformers
+sentence-transformers
+python-dotenv
+gradio
+seaborn
+notebook
+ipywidgets
