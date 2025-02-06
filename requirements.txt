@@ -3,10 +3,11 @@ langchain
 langchain-community
 langchain-core
 langchain-chroma
+langchain-huggingface
+langchain-google-genai
 transformers
 sentence-transformers
 python-dotenv
 gradio
 seaborn
 notebook
-ipywidgets
