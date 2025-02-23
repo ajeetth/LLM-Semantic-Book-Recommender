@@ -1,4 +1,6 @@
 kagglehub
+pandas
+numpy
 langchain
 langchain-community
 langchain-core
@@ -10,4 +12,3 @@ sentence-transformers
 python-dotenv
 gradio
 seaborn
-notebook
