@@ -3,8 +3,8 @@ import pandas as pd
 
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
-# from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
+#from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 
 from dotenv import load_dotenv
@@ -21,8 +21,8 @@ books['large_thumbnail'] = np.where(
 raw_documents = TextLoader('../notebooks/books_tagged_description.txt', encoding='utf-8').load()
 text_splitter = CharacterTextSplitter(chunk_size=0, chunk_overlap=0, separator='\n')
 documents = text_splitter.split_documents(raw_documents)
-#embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+# embeddings =  GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
 db_books = Chroma.from_documents(documents, embedding=embeddings)
 
 def retrieve_semantic_recommendations(

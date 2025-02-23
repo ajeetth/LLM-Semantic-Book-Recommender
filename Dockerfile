@@ -4,8 +4,8 @@ FROM python:3.12
 WORKDIR /app
 
 # Copy the requirements file and install dependencies
-COPY env_requirements.txt .
-RUN pip install --no-cache-dir -r env_requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
 COPY src/ ./src
