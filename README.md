@@ -1,4 +1,5 @@
-#📚 LLM Semantic Book Recommender
+# LLM Semantic Book Recommender 📚
+
 This is a Semantic Book Recommender that uses Large Language Model to recommend books based on user input. The system takes a user-provided book description, filters recommendations based on category and emotional tone, and returns the top-matching books with their covers and descriptions.
 
 --- 
