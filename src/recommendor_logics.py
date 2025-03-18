@@ -10,7 +10,7 @@ from langchain_chroma import Chroma
 from dotenv import load_dotenv
 load_dotenv()
 
-books = pd.read_csv("../notebooks/books_emotions_data.csv")
+books = pd.read_csv("books_emotions_data.csv")
 books["large_thumbnail"] = books["thumbnail"] + "&fife=w800"
 books['large_thumbnail'] = np.where(
     books['large_thumbnail'].isna(), 
@@ -18,11 +18,11 @@ books['large_thumbnail'] = np.where(
     books['large_thumbnail']
 ) 
 
-raw_documents = TextLoader('../notebooks/books_tagged_description.txt', encoding='utf-8').load()
+raw_documents = TextLoader('books_tagged_description.txt', encoding='utf-8').load()
 text_splitter = CharacterTextSplitter(chunk_size=0, chunk_overlap=0, separator='\n')
 documents = text_splitter.split_documents(raw_documents)
 # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-embeddings =  GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+embeddings =  GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", )
 db_books = Chroma.from_documents(documents, embedding=embeddings)
 
 def retrieve_semantic_recommendations(
