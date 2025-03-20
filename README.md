@@ -23,3 +23,8 @@ There are five main components, from data preprocessing to final application dev
 ---
 
 A requirements.txt file contains all the project dependencies to run the application.
+
+---
+
+![Book recommender UI](evidence/Screenshot_UI_1.jpg)
+
