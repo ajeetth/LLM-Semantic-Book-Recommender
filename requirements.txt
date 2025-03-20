@@ -7,6 +7,7 @@ langchain-core
 langchain-chroma
 langchain-huggingface
 langchain-google-genai
+langchain-openai
 transformers
 sentence-transformers
 python-dotenv
